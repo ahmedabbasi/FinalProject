@@ -5,22 +5,22 @@ import moment from "moment";
 class Saved extends Component {
 
   state = {
-   cars: []
+    articles: []
   }
 
   componentDidMount() {
-    this.getSavedCars();
+    this.getSavedArticles();
   }
 
-  getSavedCars = () => {
-    API.carRetrieve()
-      .then(res => this.setState({cars: res.data}))
+  getSavedArticles = () => {
+    API.articleRetrieve()
+      .then(res => this.setState({articles: res.data}))
       .catch(err => console.log(err))
   }
 
-  deleteCar = id => {
-    API.carDelete(id)
-      .then(() => this.getSavedCars())
+  deleteArticle = id => {
+    API.articleDelete(id)
+      .then(() => this.getSavedArticles())
       .catch(err => console.log(err))
   }
   
@@ -31,29 +31,30 @@ class Saved extends Component {
       <div>
         <div className="jumbotron jumbotron-fluid py-5">
           <div className="row align-items-center justify-content-center my-5">
-            <h1>SavedCars!</h1>
+            <h1>Saved Articles!</h1>
           </div>
         </div>
 
         <div className="container-fluid">
           <div className="row justify-content-center">
 
-            {/*car result container */}
+            {/* Article result container */}
             <div className="col-8">
-              <h2>{this.state.cars.length
-                ? "Savedcar Results"
-                : "No Savedcars to Display"}
+              <h2>{this.state.articles.length
+                ? "Saved Article Results"
+                : "No Saved Articles to Display"}
               </h2>
 
               <ul className="list-group list-group-flush">
                 {this
                   .state
-                  .cars
-                  .map(car => (
-                    <li key={car.airline_id} className="list-group-item d-flex justify-content-between align-items-center">
+                  .articles
+                  .map(article => (
+                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
+                      <a href={article.url} target="_blank">{article.title} - {moment(article.date).format("Do	MMMM YYYY hh:mm:ss a")}</a>
                       <span
                         className="badge badge-primary badge-pill"
-                        onClick={() => this.deleteCar(car.airline_id)}>DeleteCar</span>
+                        onClick={() => this.deleteArticle(article._id)}>Delete Article</span>
                     </li>
                   ))}
               </ul>

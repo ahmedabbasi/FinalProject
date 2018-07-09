@@ -1,29 +1,79 @@
 import axios from "axios";
 
 export default {
-//get info
-/*
-{
-  q:"PK"
-}
-
-*/
-
-  //get Car Details
-  carSearch: function(query){
-    return axios.get("/api/carquery", {params: query})
-  },
-  // save car to mongo
-  /*
-  {
-    q:"MY"
-  }
+  // get NYT articles
+  /* 
+    {
+      q: "yankees",
+      begin_date: "2001"
+    } 
   */
-  carSave: function (carInfo) {
-    return axios.post("api/cars" , carInfo)
+  cnnSearch: function(query) {
+    return axios.get("/api/cnn", {params: query})
   },
-// retrieve saved cars from mongo
-  carRetrieve: function (carInfo) {
-    return axios.get("api/cars")
+
+  foxSearch: function(query) {
+    return axios.get("/api/fox", {params: query})
+  },
+
+  msnbcSearch: function(query) {
+    return axios.get("/api/msnbc", {params: query})
+  },
+
+  newsweekSearch: function(query) {
+    return axios.get("/api/newsweek", {params: query})
+  },
+
+  bbcsportsSearch: function(query) {
+    return axios.get("/api/sports/bbc-sports", {params: query})
+  },
+
+  espnSearch: function(query) {
+    return axios.get("/api/sports/espn", {params: query})
+  },
+    
+  foxsportsSearch: function(query) {
+    return axios.get("/api/sports/fox-sports", {params: query})
+  },
+
+  cricinfoSearch: function(query) {
+    return axios.get("/api/sports/cricinfo", {params: query})
+  },
+
+  bloombergSearch: function(query) {
+    return axios.get("/api/business/bloomberg", {params: query})
+  },
+
+  businessinsiderSearch: function(query) {
+    return axios.get("/api/business/business-insider", {params: query})
+  },
+
+  economistSearch: function(query) {
+    return axios.get("/api/business/economist", {params: query})
+  },
+
+  financialtimesSearch: function(query) {
+    return axios.get("/api/business/financial-times", {params: query})
+  },
+  // save article to mongo
+  /* 
+    {
+      url: "path/to/nyt",
+      title: "sports!",
+      date: "20010808 date stuff"
+    }
+  */
+  articleSave: function(articleInfo) {
+    return axios.post("/api/articles", articleInfo)
+  },
+
+  // retrieve all saved articles from mongo
+  articleRetrieve: function() {
+    return axios.get("/api/articles")
+  },
+
+  // article delete
+  articleDelete: function(id) {
+    return axios.delete(`/api/articles/${id}`)
   }
 }
