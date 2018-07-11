@@ -107,13 +107,16 @@ class Home extends Component {
         </div>
       </div>
       
-  
+      {/* <a href="https://www.huffingtonpost.com/entry/sadiq-khan-the-man-who-prevented-trump-coming-to-london_uk_5b4362d8e4b05127ccf45fc0"> */}
+      {/* <div className="container"> */}
       <div className="jumbotron">
         <div className="row align-items-center justify-content-center my-5">
           {/* <h1>News Explorer with React!</h1>     */}
+          </div>
           
         </div>
-      </div>
+      {/* </div> */}
+      {/* </a> */}
     
 
 
@@ -122,35 +125,44 @@ class Home extends Component {
 
           {/* Form for article search */}
           <div className="col-4">
-            <h2>Search for News</h2>
+            <h2>Choose your News</h2>
             <form>
               <div className="form-group">
+              
+              <a href="../../public/assets/images/cnn-logo.png" onClick={this.articlecnnSearch}>
                 <img style={{ padding: 10 }} src="/assets/images/cnn-logo.png" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlecnnSearch}>
-                  CNN
-                  </button>
+                
+                  </a>
               </div>
-
+                  
+              
               <div className="form-group">
+              <a href="../../public/assets/images/fox-logo.png" onClick={this.articlefoxSearch}>
                 <img style={{ padding: 10 }} src="/assets/images/fox-logo.png" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlefoxSearch}>
+                {/* <button type="submit" className="btn btn-block btn-success" onClick={this.articlefoxSearch}>
                   FOX
-              </button>
+              </button> */}
+                </a>
               </div>
 
               <div className="form-group">
+              <a href="../../public/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch}>
                 <img style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlemsnbcSearch}>
+                {/* <button type="submit" className="btn btn-block btn-success" onClick={this.articlemsnbcSearch}>
                   MSNBC
-          </button>
+          </button> */}
+                </a>
               </div>
 
               <div className="form-group">
+              <a href="../../public/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch}>
                 <img style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlenewsweekSearch}>
+                {/* <button type="submit" className="btn btn-block btn-success" onClick={this.articlenewsweekSearch}>
                   NEWSWEEK
-      </button>
+      </button> */}
+      </a>
               </div>
+              
             </form>
           </div>
 
@@ -178,7 +190,7 @@ class Home extends Component {
                 ))}
             </ul>
           </div>
-
+      
         </div>
       </div>
       </div>
