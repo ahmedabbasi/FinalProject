@@ -106,11 +106,17 @@ class Home extends Component {
           </div>
         </div>
       </div>
-      <div className="jumbotron jumbotron-fluid py-5">
+      
+  
+      <div className="jumbotron">
         <div className="row align-items-center justify-content-center my-5">
-          <h1>News Explorer with React!</h1>
+          {/* <h1>News Explorer with React!</h1>     */}
+          
         </div>
       </div>
+    
+
+
       <div className="container-fluid">
         <div className="row">
 

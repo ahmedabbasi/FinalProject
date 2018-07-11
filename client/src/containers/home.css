@@ -42,3 +42,12 @@
 .btn-block {
   width:70%
 }
+
+.jumbotron{
+  margin-top: 0px;
+  background-image: url("https://dev.therealnews.com/wp-content/uploads/2017/10/theRealNewsBanner.jpg");
+  background-attachment: fixed;
+  background-color: black;
+  min-height: 400px;
+  background-repeat: no-repeat;
+}
