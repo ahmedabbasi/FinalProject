@@ -93,44 +93,37 @@ class Business extends Component {
 
     return (
       <div>
+
         <div className="jumbotron jumbotron-fluid py-5">
           <div className="row align-items-center justify-content-center my-5">
             {/* <h1>News Explorer with React!</h1> */}
           </div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
+     
+      <div className="container-fluid">
+        <div className="row">
 
             {/* Form for article search */}
-            <div className="col-4">
+            <div className="col-md-4 col-sm-12">
               <h2>Search for News</h2>
               <form>
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/bloomberg-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success" onClick={this.articlebloombergSearch}>
-                    BLOOMBERG
-                  </button>
+                  <img style={{padding:10}} src="/assets/images/bloomberg-logo.png" bordered spaced rounded onClick={this.articlebloombergSearch}/>
+                 
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/businessinsider-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success"  onClick={this.articlebusinessinsiderSearch}>
-                    BUSINESS INSIDER
-              </button>
+                  <img style={{padding:10}} src="/assets/images/businessinsider-logo.png" bordered spaced rounded onClick={this.articlebusinessinsiderSearch} />
+         
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/economist-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success" onClick={this.articleeconomistSearch}>
-                    ECONOMIST
-          </button>
+                  <img style={{padding:10}} src="/assets/images/economist-logo.png" bordered spaced rounded  onClick={this.articleeconomistSearch} />
+   
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/financialtimes-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success" onClick={this.articlefinancialtimesSearch}>
-                    FINANCIAL TIMES
-      </button>
+                  <img style={{padding:10}} src="/assets/images/financialtimes-logo.png" bordered spaced rounded onClick={this.articlefinancialtimesSearch}/>
+
                 </div>
               </form>
             </div>
@@ -139,23 +132,24 @@ class Business extends Component {
 
 
             {/* Article result container */}
-            <div className="col-8">
+            <div className="col-md-8 col-sm-12">
               <h2>{this.state.articles.length
                 ? "Article Results"
                 : "Search for some articles"}
               </h2>
 
               <ul className="list-group list-group-flush">
-                {this
-                  .state
-                  .articles
-                  .map(article => (
-                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
-                      <b> {article.title}</b>
-                      {article.description}
-                      <span
-                        className="badge badge-primary badge-pill"
-                        onClick={() => this.saveArticle(article._id)}>Save News</span>
+               {this
+                .state
+                .articles
+                .map(article => (
+                  <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{backgroundColor:'black', color:'white'}}>
+                    <img src={article.urlToImage} style={{height:'100px', width:'100px',padding:'10px', float:'left'}}/>
+                    <h4> {article.title} </h4>
+                   {article.description}
+                    <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
+                    Save News
+                      </button>
                     </li>
                   ))}
               </ul>
@@ -164,6 +158,7 @@ class Business extends Component {
           </div>
         </div>
 
+      </div>
       </div>
     )
   }

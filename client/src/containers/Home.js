@@ -94,107 +94,81 @@ class Home extends Component {
 
     return (
       <div>
-      <div className="homepage-hero-module">
-        <div className="video-container">
-          <div className="filter"></div>
-          <video autoPlay loop className="fillWidth">
-            <source src="./assets/videos/Ferris-wheel.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="/assets/videos/Ferris-wheel.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-          </video>
-          <div className="poster hidden">
-            <img src="./assets/videos/Ferris-wheel.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-      
-      {/* <a href="https://www.huffingtonpost.com/entry/sadiq-khan-the-man-who-prevented-trump-coming-to-london_uk_5b4362d8e4b05127ccf45fc0"> */}
-      {/* <div className="container"> */}
+
+
       <div className="jumbotron">
-        <div className="row align-items-center justify-content-center my-5">
-          {/* <h1>News Explorer with React!</h1>     */}
-          </div>
-          
-        </div>
-      {/* </div> */}
-      {/* </a> */}
-    
+      
+      </div>
+
+
 
 
       <div className="container-fluid">
         <div className="row">
 
           {/* Form for article search */}
-          <div className="col-4">
-            <h2>Choose your News</h2>
-            <form>
-              <div className="form-group">
-              
-              <a href="../../public/assets/images/cnn-logo.png" onClick={this.articlecnnSearch}>
-                <img style={{ padding: 10 }} src="/assets/images/cnn-logo.png" bordered spaced rounded />
-                
-                  </a>
-              </div>
-                  
-              
-              <div className="form-group">
-              <a href="../../public/assets/images/fox-logo.png" onClick={this.articlefoxSearch}>
-                <img style={{ padding: 10 }} src="/assets/images/fox-logo.png" bordered spaced rounded />
-                {/* <button type="submit" className="btn btn-block btn-success" onClick={this.articlefoxSearch}>
-                  FOX
-              </button> */}
-                </a>
-              </div>
 
-              <div className="form-group">
-              <a href="../../public/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch}>
-                <img style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" bordered spaced rounded />
-                {/* <button type="submit" className="btn btn-block btn-success" onClick={this.articlemsnbcSearch}>
-                  MSNBC
-          </button> */}
-                </a>
-              </div>
+          <div className="form-group">
 
-              <div className="form-group">
-              <a href="../../public/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch}>
-                <img style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" bordered spaced rounded />
-                {/* <button type="submit" className="btn btn-block btn-success" onClick={this.articlenewsweekSearch}>
-                  NEWSWEEK
-      </button> */}
-      </a>
-              </div>
-              
-            </form>
+        
+            <div className="col-md-3 col-sm-12">
+              <h2>Select your Channel</h2>
+              <form>
+                <div className="form-group" style={{ border: '10px' }}>
+                  <img style={{ padding: 10 }} src="/assets/images/cnn-logo.png" bordered spaced rounded onClick={this.articlecnnSearch} />
+                </div>
+
+
+
+                <div className="form-group" style={{ border: '10px' }}>
+                  <img style={{ padding: 10 }} src="/assets/images/fox-logo.png" bordered spaced rounded onClick={this.articlefoxSearch} />
+                </div>
+
+                <div className="form-group" style={{ border: '10px' }}>
+                  <img style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" bordered spaced rounded onClick={this.articlemsnbcSearch} />
+                </div>
+
+                <div className="form-group" style={{ border: '10px' }}>
+                  <img style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" bordered spaced rounded onClick={this.articlenewsweekSearch} />
+
+                </div>
+
+              </form>
+            </div>
+
+
+
+            {/* Article result container */}
+            <div className="col-md-8 col-sm-12" >
+              <h2>{this.state.articles.length
+                ? "Article Results"
+                : "Search for some articles"}
+              </h2>
+
+              <ul className="list-group list-group-flush">
+                {this
+                  .state
+                  .articles
+                  .map(article => (
+                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white', }}>
+                      <img src={article.urlToImage} style={{ height: '100px', width: '100px', padding: '10px', float: 'left' }} />
+                      <h4> {article.title} </h4>
+                      {article.description}
+                      <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
+                        Save News
+                    </button>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+
           </div>
-
-
-
-          {/* Article result container */}
-          <div className="col-8">
-            <h2>{this.state.articles.length
-              ? "Article Results"
-              : "Search for some articles"}
-            </h2>
-
-            <ul className="list-group list-group-flush">
-              {this
-                .state
-                .articles
-                .map(article => (
-                  <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
-                    <b> {article.title}</b>
-                    {article.description}
-                    <span
-                      className="badge badge-primary badge-pill"
-                      onClick={() => this.saveArticle(article._id)}>Save News</span>
-                  </li>
-                ))}
-            </ul>
-          </div>
-      
         </div>
       </div>
+
       </div>
-        )
+                )
+                
   }
 }
 

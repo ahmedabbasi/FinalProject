@@ -1,48 +1,15 @@
-.homepage-hero-module {
-  border-right: none;
-  border-left: none;
-  position: relative;
-}
-.no-video .video-container video,
-.touch .video-container video {
-  display: none;
-}
-.no-video .video-container .poster,
-.touch .video-container .poster {
-  display: block !important;
-}
-.video-container {
-  position: relative;
-  bottom: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: #000;
-}
-.video-container .poster img {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-}
-.video-container .filter {
-  z-index: 100;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-}
-.video-container video {
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-}
-.video-container video.fillWidth {
-  width: 100%;
-}
-.btn-block {
-  width:70%
-}
 
+.btn-block {
+  width:20%
+}
+/* .col-8 {
+  float:right;
+  margin-right:20px;
+} */
+
+.col-5{
+  float:left;
+}
 .jumbotron{
   background-image: url("http://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/1734_news-and-events-header_f1-2400.jpg?version=3f1b984a&width=1120&format=jpg&quality=70");
   margin-top: 20px;
@@ -53,3 +20,4 @@
   position: relative;
   background-repeat: no-repeat;
 }
+

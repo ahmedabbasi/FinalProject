@@ -29,11 +29,9 @@ class Saved extends Component {
   render() {
     return (
       <div>
-        {/* <div className="jumbotron jumbotron-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5"> */}
-            {/* <h1>Saved Articles!</h1> */}
-          {/* </div>
-        </div> */}
+
+  
+
 
         <div className="container-fluid">
           <div className="row justify-content-center">
@@ -50,8 +48,8 @@ class Saved extends Component {
                   .state
                   .articles
                   .map(article => (
-                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
-                      <a href={article.url} target="_blank">{article.title} - {moment(article.date).format("Do	MMMM YYYY hh:mm:ss a")}</a>
+                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center" style={{backgroundColor:'black', color:'white',}}>
+                      <a href={article.url} target="_blank">{article.title}</a>
                       <span
                         className="badge badge-primary badge-pill"
                         onClick={() => this.deleteArticle(article._id)}>Delete Article</span>
