@@ -29,17 +29,17 @@ class Saved extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5">
-            <h1>Saved Articles!</h1>
-          </div>
-        </div>
+        {/* <div className="jumbotron jumbotron-fluid py-5">
+          <div className="row align-items-center justify-content-center my-5"> */}
+            {/* <h1>Saved Articles!</h1> */}
+          {/* </div>
+        </div> */}
 
         <div className="container-fluid">
           <div className="row justify-content-center">
 
             {/* Article result container */}
-            <div className="col-8">
+            <div className="col-12">
               <h2>{this.state.articles.length
                 ? "Saved Article Results"
                 : "No Saved Articles to Display"}

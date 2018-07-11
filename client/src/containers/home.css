@@ -44,10 +44,12 @@
 }
 
 .jumbotron{
-  margin-top: 0px;
-  background-image: url("https://dev.therealnews.com/wp-content/uploads/2017/10/theRealNewsBanner.jpg");
+  background-image: url("http://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/1734_news-and-events-header_f1-2400.jpg?version=3f1b984a&width=1120&format=jpg&quality=70");
+  margin-top: 20px;
   background-attachment: fixed;
   background-color: black;
-  min-height: 400px;
+  background-size: cover;
+  min-height: 450px;
+  position: relative;
   background-repeat: no-repeat;
 }
