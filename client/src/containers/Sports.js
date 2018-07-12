@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import "./home.css";
 
 
 class Sports extends Component {
@@ -94,10 +95,9 @@ class Sports extends Component {
     return (
       <div>
 
-        <div className="jumbotron jumbotron-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5">
-            {/* <h1>News Explorer with React!</h1> */}
-          </div>
+      <div>
+          <div className="jumbotron">
+        </div>
 
       <div className="container-fluid">
         <div className="row">

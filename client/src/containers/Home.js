@@ -94,10 +94,7 @@ class Home extends Component {
 
     return (
       <div>
-
-
       <div className="jumbotron">
-      
       </div>
 
 
@@ -115,22 +112,29 @@ class Home extends Component {
               <h2>Select your Channel</h2>
               <form>
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/cnn-logo.png" bordered spaced rounded onClick={this.articlecnnSearch} />
+                <a href="../../public/assets/images/cnn-logo.png" onClick={this.articlecnnSearch}>
+                <img id="rounded" src= {{ padding: 10 }} src="/assets/images/cnn-logo.png" onClick={this.articlecnnSearch} />
+                  </a>
                 </div>
 
 
 
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/fox-logo.png" bordered spaced rounded onClick={this.articlefoxSearch} />
+                <a href="../../public/assets/images/fox-logo.png" onClick={this.articlefoxSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/fox-logo.png" onClick={this.articlefoxSearch} />
+                </a>
                 </div>
 
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" bordered spaced rounded onClick={this.articlemsnbcSearch} />
+                <a href="../../public/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch} />
+                  </a>
                 </div>
 
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" bordered spaced rounded onClick={this.articlenewsweekSearch} />
-
+                <a href="../../public/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch} />
+                  </a>
                 </div>
 
               </form>
