@@ -93,36 +93,44 @@ class Sports extends Component {
   render() {
 
     return (
-      <div>
+      
 
       <div>
-          <div className="jumbotron">
-        </div>
+      <div class="jumbotron" id="sports">
+  <video id="bg-video" autoplay="true" loop="loop" preload="metadata" muted="muted">
+    <source src="https://www.videvo.net/videvo_files/converted/2015_08/preview/Track_and_Field_2.mp478173.webm" type="video/webm" />
+  </video>
+        
 
       <div className="container-fluid">
         <div className="row">
 
             {/* Form for article search */}
             <div className="col-md-4 col-sm-12">
-              <h2>Search for News</h2>
+              <h2>Sports News</h2>
               <form>
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/bbcsports-logo.jpg" bordered spaced rounded onClick={this.articlebbcsportsSearch}/>
+                <a href="../../public/assets/images/bbcsports-logo.jpg">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/bbcsports-logo.jpg" bordered spaced rounded onClick={this.articlebbcsportsSearch}/>
+                  </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/foxsports-logo.png" bordered spaced rounded onClick={this.articlefoxsportsSearch}/>
-          
+                <a href="../../public/assets/images/foxsports-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/foxsports-logo.png" onClick={this.articlefoxsportsSearch}/>
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/espn-logo.png" bordered spaced rounded onClick={this.articleespnSearch}/>
-         
+                <a href="../../public/assets/images/espn-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/espn-logo.png" onClick={this.articleespnSearch}/>
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/cricinfo-logo.png" bordered spaced rounded onClick={this.articlecricinfoSearch}/>
-       
+                <a href="../../public/assets/images/cricinfo-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/cricinfo-logo.png" onClick={this.articlecricinfoSearch}/>
+                </a>
                 </div>
               </form>
             </div>
@@ -132,8 +140,8 @@ class Sports extends Component {
             {/* Article result container */}
             <div className="col-md-8 col-sm-12">
               <h2>{this.state.articles.length
-                ? "Article Results"
-                : "Search for some articles"}
+                ? "Top Stories"
+                : "Top Stories"}
               </h2>
 
               <ul className="list-group list-group-flush">
