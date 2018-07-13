@@ -21,6 +21,28 @@ class Sports extends Component {
   }
 
 
+  componentDidMount() {
+    this.articlebbcsportsSearchDef();
+  }
+
+
+
+  articlebbcsportsSearchDef = event => {
+    API.bbcsportsSearch({
+      q: this.state.q
+    }).then(res => {
+      console.log(res);
+      this.setState({
+        articles: res.data.articles,
+        q: ""
+      })
+    })
+      .catch(err => console.log(err))
+  }
+
+
+
+
 
   articlebbcsportsSearch = event => {
     event.preventDefault();
@@ -93,17 +115,28 @@ class Sports extends Component {
 
     return (
       <div>
+      <div className="jumbotron">
+      {this
+        .state
+        .articles
+        .map(article => (
+          <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left"
+          id="mylist">
+          <div id = 'container'>
+            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1200px',
+               padding: '10px', marginLeft:'10px'}} />
+               <div className="centered"><h1> {article.title} </h1></div>
+               </div>
+          </li>
+        ))}
+      </div>
 
-        <div className="jumbotron jumbotron-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5">
-            {/* <h1>News Explorer with React!</h1> */}
-          </div>
 
       <div className="container-fluid">
         <div className="row">
 
             {/* Form for article search */}
-            <div className="col-md-4 col-sm-12">
+            <div className="col-md-3 col-sm-12">
               <h2>Search for News</h2>
               <form>
                 <div className="form-group">
@@ -141,14 +174,16 @@ class Sports extends Component {
                 .state
                 .articles
                 .map(article => (
-                  <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{backgroundColor:'black', color:'white',}}>
-                    <img src={article.urlToImage} style={{height:'100px', width:'100px',padding:'10px', float:'left'}}/>
-                    <h4> {article.title} </h4>
-                   {article.description}
-                    <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
+                  <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white' }}>
+                  <img src={article.urlToImage} style={{ height: '120px', width: '160px', padding: '10px', float: 'left', marginBottom: '40px'}} />
+                  <h3> {article.title} </h3>
+                  <div>
+                  <p>{article.description}</p>
+                  </div>
+                  <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
                     Save News
-                      </button>
-                    </li>
+                </button>
+                </li>
                   ))}
               </ul>
             </div>
@@ -156,7 +191,6 @@ class Sports extends Component {
           </div>
         </div>
 
-      </div>
       </div>
     )
   }
