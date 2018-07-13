@@ -104,7 +104,7 @@ class Business extends Component {
 
             {/* Form for article search */}
             <div className="col-md-4 col-sm-12">
-              <h2>Search for News</h2>
+              <h2>Business News</h2>
               <form>
                 <div className="form-group">
                 <a href="../../public/assets/images/bloomberg-logo.png">
@@ -133,13 +133,11 @@ class Business extends Component {
             </div>
           
 
-
-
             {/* Article result container */}
             <div className="col-md-8 col-sm-12">
               <h2>{this.state.articles.length
-                ? "Article Results"
-                : "Search for some articles"}
+                ? "Top News"
+                : "Top News"}
               </h2>
 
               <ul className="list-group list-group-flush">
