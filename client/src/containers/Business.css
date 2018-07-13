@@ -1,9 +1,9 @@
-.sports {
+.jumbotron {
     margin: 70vh 0;
     overflow-y: hidden;
   }
-
-#bg-video {
+  
+  #bg-video {
     top: 0px;
     left: 0px;
     position: fixed;
