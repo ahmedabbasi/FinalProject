@@ -93,10 +93,12 @@ class Home extends Component {
   render() {
 
     return (
-      <div>
-      <div className="jumbotron">
-      </div>
-
+      
+      
+  <div class="jumbotron">
+  <video id="bg-video" autoplay="true" loop="loop" preload="metadata" muted="muted">
+    <source src="https://www.videvo.net/videvo_files/converted/2015_10/preview/Smartphone_scroll_01_Videvo.mov65352.webm" type="video/webm" />
+  </video>
 
 
 
@@ -109,7 +111,7 @@ class Home extends Component {
 
         
             <div className="col-md-3 col-sm-12">
-              <h2>Select your Channel</h2>
+              <h2>Choose Your News:</h2>
               <form>
                 <div className="form-group" style={{ border: '10px' }}>
                 <a href="../../public/assets/images/cnn-logo.png" onClick={this.articlecnnSearch}>
@@ -144,9 +146,9 @@ class Home extends Component {
 
             {/* Article result container */}
             <div className="col-md-8 col-sm-12" >
-              <h2>{this.state.articles.length
-                ? "Article Results"
-                : "Search for some articles"}
+              <h2 id="highlight">{this.state.articles.length
+                ? "Top Stories"
+                : "Top Stories"}
               </h2>
 
               <ul className="list-group list-group-flush">

@@ -107,23 +107,27 @@ class Business extends Component {
               <h2>Search for News</h2>
               <form>
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/bloomberg-logo.png" bordered spaced rounded onClick={this.articlebloombergSearch}/>
-                 
+                <a href="../../public/assets/images/bloomberg-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/bloomberg-logo.png" onClick={this.articlebloombergSearch}/>
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/businessinsider-logo.png" bordered spaced rounded onClick={this.articlebusinessinsiderSearch} />
-         
+                <a href="../../public/assets/images/businessinsider-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/businessinsider-logo.png" onClick={this.articlebusinessinsiderSearch} />
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/economist-logo.png" bordered spaced rounded  onClick={this.articleeconomistSearch} />
-   
+                <a href="../../public/assets/images/economist-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/economist-logo.png" onClick={this.articleeconomistSearch} />
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/financialtimes-logo.png" bordered spaced rounded onClick={this.articlefinancialtimesSearch}/>
-
+                <a href="../../public/assets/images/financialtimes-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/financialtimes-logo.png" onClick={this.articlefinancialtimesSearch}/>
+                </a>
                 </div>
               </form>
             </div>
