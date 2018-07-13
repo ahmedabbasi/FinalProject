@@ -110,9 +110,9 @@ class Home extends Component {
           {/* Form for article search */}
 
           <div className="form-group">
-
-      
             <div className="col-md-3 col-sm-12">
+
+
               <h2>Choose Your News:</h2>
               <form>
                 <div className="form-group" style={{ border: '10px' }}>
