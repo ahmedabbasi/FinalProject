@@ -122,8 +122,7 @@ class Business extends Component {
           <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left"
           id="mylist">
           <div id = 'container'>
-            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1200px',
-               padding: '10px', marginLeft:'10px'}} />
+            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1280px'}} />
                <div className="centered"><h1> {article.title} </h1></div>
                </div>
           </li>
