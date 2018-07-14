@@ -122,8 +122,7 @@ class Home extends Component {
           <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left"
           id="mylist">
           <div id = 'container'>
-            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1200px',
-               padding: '10px', marginLeft:'10px'}} />
+            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1280px'}} />
                <div className="centered"><h1> {article.title} </h1></div>
                </div>
           </li>
@@ -191,7 +190,7 @@ class Home extends Component {
                   .articles
                   .map(article => (
                     <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white' }}>
-                      <img src={article.urlToImage} style={{ height: '120px', width: '160px', padding: '10px', float: 'left', marginBottom: '40px'}} />
+                      <img src={article.urlToImage} style={{ height: '120px', width: '160px', float: 'left'}} />
                       <h3> {article.title} </h3>
                       <div>
                       <p>{article.description}</p>
