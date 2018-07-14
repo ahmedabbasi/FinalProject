@@ -30,9 +30,15 @@ const MyNavbar = () => (
         <NavItem eventKey={2} href="#">
           Link Right
       </NavItem>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
+
+
+    </Nav>
+  </Navbar.Collapse>
+  
+</Navbar>
+
+
+
 
 )
 
