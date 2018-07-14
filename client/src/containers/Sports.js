@@ -115,6 +115,10 @@ class Sports extends Component {
   render() {
 
     return (
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
       <div>
       <div className="jumbotron">
       {this
@@ -132,14 +136,30 @@ class Sports extends Component {
         ))}
       </div>
 
+<<<<<<< HEAD
+=======
+      
+
+      <div>
+    
+
+
+>>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
 
       <div className="container-fluid">
         <div className="row">
 
             {/* Form for article search */}
+<<<<<<< HEAD
             <div className="col-md-3 col-sm-12">
               <h2>Search for News</h2>
               <form>
+=======
+
+            <div className="col-md-3 col-sm-12">
+              <h2>Search for News</h2>
+      <form>
+>>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
                 <div className="form-group">
                 <a href="../../public/assets/images/bbcsports-logo.jpg">
                   <img id="rounded" style={{padding:10}} src="/assets/images/bbcsports-logo.jpg" bordered spaced rounded onClick={this.articlebbcsportsSearch}/>
@@ -194,7 +214,7 @@ class Sports extends Component {
               </ul>
             </div>
 
-          </div>
+       
         </div>
 
       </div>

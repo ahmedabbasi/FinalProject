@@ -111,6 +111,10 @@ class Home extends Component {
   render() {
 
     return (
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
       <div>
 
 
@@ -129,6 +133,13 @@ class Home extends Component {
           </li>
         ))}
       </div>
+<<<<<<< HEAD
+=======
+
+      
+
+  
+>>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
 
 
 
@@ -140,9 +151,9 @@ class Home extends Component {
           {/* Form for article search */}
 
           <div className="form-group">
-
-      
             <div className="col-md-3 col-sm-12">
+
+
               <h2>Choose Your News:</h2>
               <form>
                 <div className="form-group" style={{ border: '10px' }}>
