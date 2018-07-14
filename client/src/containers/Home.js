@@ -135,44 +135,50 @@ class Home extends Component {
 
       <div className="container-fluid">
         <div className="row">
+      
 
           {/* Form for article search */}
 
           <div className="form-group">
 
-        
+      
             <div className="col-md-3 col-sm-12">
-              <h2>Select your Channel</h2>
+              <h2>Choose Your News:</h2>
               <form>
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/cnn-logo.png" bordered spaced rounded onClick={this.articlecnnSearch} />
+                <a href="../../public/assets/images/cnn-logo.png" onClick={this.articlecnnSearch}>
+                <img id="rounded" src= {{ padding: 10 }} src="/assets/images/cnn-logo.png" onClick={this.articlecnnSearch} />
+                  </a>
                 </div>
 
 
 
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/fox-logo.png" bordered spaced rounded onClick={this.articlefoxSearch} />
+                <a href="../../public/assets/images/fox-logo.png" onClick={this.articlefoxSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/fox-logo.png" onClick={this.articlefoxSearch} />
+                </a>
                 </div>
 
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" bordered spaced rounded onClick={this.articlemsnbcSearch} />
+                <a href="../../public/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch} />
+                  </a>
                 </div>
 
                 <div className="form-group" style={{ border: '10px' }}>
-                  <img style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" bordered spaced rounded onClick={this.articlenewsweekSearch} />
-
+                <a href="../../public/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch} />
+                  </a>
                 </div>
-
               </form>
             </div>
 
 
-
             {/* Article result container */}
             <div className="col-md-8 col-sm-12" >
-              <h2>{this.state.articles.length
-                ? "Article Results"
-                : "Search for some articles"}
+              <h2 id="highlight">{this.state.articles.length
+                ? "Top Stories"
+                : "Top Stories"}
               </h2>
 
               <ul className="list-group list-group-flush">
@@ -191,9 +197,9 @@ class Home extends Component {
                     </button>
                     </li>
                   ))}
+                
               </ul>
             </div>
-
           </div>
         </div>
       </div>

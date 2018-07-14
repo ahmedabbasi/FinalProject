@@ -55,6 +55,23 @@ export default {
   financialtimesSearch: function(query) {
     return axios.get("/api/business/financial-times", {params: query})
   },
+
+  buzzfeedSearch: function(query) {
+    return axios.get("/api/entertainment/buzzfeed", {params: query})
+  },
+  dailymailSearch: function(query) {
+    return axios.get("/api/entertainment/dailymail", {params: query})
+  },
+  mtvSearch: function(query) {
+    return axios.get("/api/entertainment/mtv", {params: query})
+  },
+  
+  polygonSearch: function(query) {
+    return axios.get("/api/entertainment/polygon", {params: query})
+  },
+
+
+
   // save article to mongo
   /* 
     {
