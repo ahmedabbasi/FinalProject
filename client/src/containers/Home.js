@@ -21,6 +21,24 @@ class Home extends Component {
     });
   }
 
+  componentDidMount() {
+    this.articlecnnSearchDef();
+  }
+
+
+
+  articlecnnSearchDef = event => {
+    API.cnnSearch({
+      q: this.state.q
+    }).then(res => {
+      console.log(res);
+      this.setState({
+        articles: res.data.articles,
+        q: ""
+      })
+    })
+      .catch(err => console.log(err))
+  }
 
 
   articlecnnSearch = event => {
@@ -93,12 +111,29 @@ class Home extends Component {
   render() {
 
     return (
+
+      <div>
+
+
+      <div className="jumbotron">
+      {this
+        .state
+        .articles
+        .map(article => (
+          <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left"
+          id="mylist">
+          <div id = 'container'>
+            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1200px',
+               padding: '10px', marginLeft:'10px'}} />
+               <div className="centered"><h1> {article.title} </h1></div>
+               </div>
+          </li>
+        ))}
+      </div>
+
       
 
-  <div class="jumbotron">
-  <video id="bg-video" autoplay="true" loop="loop" preload="metadata" muted="muted">
-    <source src="https://www.videvo.net/videvo_files/converted/2015_10/preview/Smartphone_scroll_01_Videvo.mov65352.webm" type="video/webm" />
-  </video>
+  
 
 
 
@@ -156,10 +191,12 @@ class Home extends Component {
                   .state
                   .articles
                   .map(article => (
-                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white', }}>
-                      <img src={article.urlToImage} style={{ height: '100px', width: '100px', padding: '10px', float: 'left' }} />
-                      <h4> {article.title} </h4>
-                      {article.description}
+                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white' }}>
+                      <img src={article.urlToImage} style={{ height: '120px', width: '160px', padding: '10px', float: 'left', marginBottom: '40px'}} />
+                      <h3> {article.title} </h3>
+                      <div>
+                      <p>{article.description}</p>
+                      </div>
                       <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
                         Save News
                     </button>

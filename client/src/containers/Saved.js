@@ -33,9 +33,6 @@ class Saved extends Component {
   
 
 
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-
             {/* Article result container */}
             <div className="col-12">
               <h2>{this.state.articles.length
@@ -59,9 +56,8 @@ class Saved extends Component {
             </div>
 
           </div>
-        </div>
+       
 
-      </div>
     )
   }
 }
