@@ -115,7 +115,6 @@ class Sports extends Component {
   render() {
 
     return (
-
       <div>
       <div className="jumbotron">
       {this
@@ -135,7 +134,7 @@ class Sports extends Component {
 
       
 
-      <div>
+      
     
 
 
@@ -205,6 +204,7 @@ class Sports extends Component {
        
         </div>
 
+      </div>
       </div>
     )
   }

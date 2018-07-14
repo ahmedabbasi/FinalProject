@@ -3,7 +3,7 @@ import API from "../utils/API";
 import "./home.css";
 
 
-class Business extends Component {
+class Entertainment extends Component {
 
   state = {
     articles: [],
@@ -15,13 +15,13 @@ class Business extends Component {
 
 
   componentDidMount() {
-    this.articlebloombergSearchDef();
+    this.articlemtvSearchDef();
   }
 
 
 
-  articlebloombergSearchDef = event => {
-    API.businessinsiderSearch({
+  articlemtvSearchDef = event => {
+    API.mtvSearch({
       q: this.state.q
     }).then(res => {
       console.log(res);
@@ -43,9 +43,9 @@ class Business extends Component {
 
 
 
-  articlebloombergSearch = event => {
+  articlebuzzfeedSearch = event => {
     event.preventDefault();
-    API.bloombergSearch({
+    API.buzzfeedSearch({
       q: this.state.q
     }).then(res => {
       console.log(res);
@@ -56,9 +56,9 @@ class Business extends Component {
     })
       .catch(err => console.log(err))
   }
-  articlebusinessinsiderSearch = event => {
+  articledailymailSearch = event => {
     event.preventDefault();
-    API.businessinsiderSearch({
+    API.dailymailSearch({
       q: this.state.q
     }).then(res => {
       console.log(res.data);
@@ -69,9 +69,9 @@ class Business extends Component {
     })
       .catch(err => console.log(err))
   }
-  articleeconomistSearch = event => {
+  articlemtvSearch = event => {
     event.preventDefault();
-    API.economistSearch({
+    API.mtvSearch({
       q: this.state.q
     }).then(res => {
       console.log(res.data);
@@ -83,9 +83,9 @@ class Business extends Component {
       .catch(err => console.log(err))
   }
 
-  articlefinancialtimesSearch = event => {
+  articlepolygonSearch = event => {
     event.preventDefault();
-    API.financialtimesSearch({
+    API.polygonSearch({
       q: this.state.q
     }).then(res => {
       console.log(res.data);
@@ -114,6 +114,7 @@ class Business extends Component {
 
     return (
       <div>
+
       <div className="jumbotron">
       {this
         .state
@@ -129,48 +130,49 @@ class Business extends Component {
           </li>
         ))}
       </div>
+
+     
       <div className="container-fluid">
         <div className="row">
 
             {/* Form for article search */}
-
             <div className="col-md-3 col-sm-12">
               <h2>Search for News</h2>
-
-            
               <form>
                 <div className="form-group">
-                <a href="../../public/assets/images/bloomberg-logo.png">
-                  <img id="rounded" style={{padding:10}} src="/assets/images/bloomberg-logo.png" onClick={this.articlebloombergSearch}/>
+                <a href="../../public/assets/images/buzzfeed-logo.jpg">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/buzzfeed-logo.jpg" onClick={this.articlebuzzfeedSearch}/>
                 </a>
                 </div>
 
                 <div className="form-group">
-                <a href="../../public/assets/images/businessinsider-logo.png">
-                  <img id="rounded" style={{padding:10}} src="/assets/images/businessinsider-logo.png" onClick={this.articlebusinessinsiderSearch} />
+                <a href="../../public/assets/images/dailymail-logo.jpg">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/dailymail-logo.jpg" onClick={this.articledailymailSearch} />
                 </a>
                 </div>
 
                 <div className="form-group">
-                <a href="../../public/assets/images/economist-logo.png">
-                  <img id="rounded" style={{padding:10}} src="/assets/images/economist-logo.png" onClick={this.articleeconomistSearch} />
+                <a href="../../public/assets/images/mtv-logo.jpg">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/mtv-logo.jpg" onClick={this.articlemtvSearch} />
                 </a>
                 </div>
 
                 <div className="form-group">
-                <a href="../../public/assets/images/financialtimes-logo.png">
-                  <img id="rounded" style={{padding:10}} src="/assets/images/financialtimes-logo.png" onClick={this.articlefinancialtimesSearch}/>
+                <a href="../../public/assets/images/polygon-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/polygon-logo.png" onClick={this.articlepolygonSearch}/>
                 </a>
                 </div>
               </form>
             </div>
           
 
+
+
             {/* Article result container */}
             <div className="col-md-8 col-sm-12">
               <h2>{this.state.articles.length
-                ? "Top News"
-                : "Top News"}
+                ? "Article Results"
+                : "Search for some articles"}
               </h2>
 
               <ul className="list-group list-group-flush">
@@ -191,12 +193,14 @@ class Business extends Component {
                   ))}
               </ul>
             </div>
-          </div>
+
           </div>
         </div>
+
+      </div>
       
     )
   }
 }
 
-export default Business;
+export default Entertainment;
