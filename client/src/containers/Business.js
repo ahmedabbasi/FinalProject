@@ -194,8 +194,6 @@ class Business extends Component {
           </div>
           </div>
         </div>
-
-      </div>
       
     )
   }

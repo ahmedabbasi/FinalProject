@@ -111,10 +111,6 @@ class Home extends Component {
   render() {
 
     return (
-<<<<<<< HEAD
-=======
-
->>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
       <div>
 
 
@@ -133,13 +129,10 @@ class Home extends Component {
           </li>
         ))}
       </div>
-<<<<<<< HEAD
-=======
 
       
 
   
->>>>>>> 2aafaf6dcffe7845a0cbc56dd004db4329846081
 
 
 
