@@ -6,6 +6,7 @@ import Home from "./containers/Home";
 import Saved from "./containers/Saved";
 import Sports from "./containers/Sports";
 import Business from "./containers/Business";
+import Entertainment from "./containers/Entertainment";
 
 
 
@@ -14,10 +15,12 @@ const App = () => (
     <div>
       <Navbar/>
       <Switch>
+        
         <Route exact path="/" component={Home}/>
         <Route exact path="/saved" component={Saved}/>
         <Route exact path="/sports" component={Sports}/>
         <Route exact path="/business" component={Business}/>
+        <Route exact path="/entertainment" component={Entertainment}/>
         <Route render={() => (<h1 className="text-center">Page Not Found!</h1>)}/>
       </Switch>
     </div>

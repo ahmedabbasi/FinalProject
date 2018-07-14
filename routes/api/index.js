@@ -12,6 +12,12 @@ const bloombergRoutes=require("./bloomberg/bloombergRoutes");
 const businessinsiderRoutes=require("./business-insider/business-insiderRoutes");
 const economistRoutes= require("./economist/economistRoute");
 const financialtimesRoutes=require("./financial-times/financial-timesRoutes");
+const buzzfeedRoutes=require("./buzzfeed/buzzfeedRoutes");
+const dailymailRoutes=require("./dailymail/dailymailRoutes");
+const mtvRoutes=require("./mtv/mtvRoutes");
+const polygonRoutes=require("./polygon/polygonRoutes");
+
+
 
 
 
@@ -30,5 +36,9 @@ router.use("/business/bloomberg",bloombergRoutes);
 router.use("/business/business-insider",businessinsiderRoutes);
 router.use("/business/economist",economistRoutes);
 router.use("/business/financial-times", financialtimesRoutes);
+router.use("/entertainment/buzzfeed", buzzfeedRoutes);
+router.use("/entertainment/dailymail", dailymailRoutes);
+router.use("/entertainment/mtv", mtvRoutes);
+router.use("/entertainment/polygon", polygonRoutes);
 
 module.exports = router;

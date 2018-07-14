@@ -26,6 +26,9 @@
     "if-env": "^1.0.4",
     "materialize": "^1.0.0",
     "mongoose": "^5.1.6",
+    "react": "^16.4.1",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.1",
     "react-materialize": "^2.3.3"
   }
 }

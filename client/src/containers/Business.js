@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import "./home.css";
 
 
 class Business extends Component {
@@ -11,6 +12,26 @@ class Business extends Component {
     end_date: ""
   }
 
+
+
+  componentDidMount() {
+    this.articlebloombergSearchDef();
+  }
+
+
+
+  articlebloombergSearchDef = event => {
+    API.businessinsiderSearch({
+      q: this.state.q
+    }).then(res => {
+      console.log(res);
+      this.setState({
+        articles: res.data.articles,
+        q: ""
+      })
+    })
+      .catch(err => console.log(err))
+  }
 
   handleOnChange = event => {
     const { name, value } = event.target;
@@ -93,77 +114,86 @@ class Business extends Component {
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5">
-            <h1>News Explorer with React!</h1>
-          </div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
+      <div className="jumbotron">
+      {this
+        .state
+        .articles
+        .map(article => (
+          <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left"
+          id="mylist">
+          <div id = 'container'>
+            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1280px'}} />
+               <div className="centered"><h1> {article.title} </h1></div>
+               </div>
+          </li>
+        ))}
+      </div>
+      <div className="container-fluid">
+        <div className="row">
 
             {/* Form for article search */}
-            <div className="col-4">
+
+            <div className="col-md-3 col-sm-12">
               <h2>Search for News</h2>
+
+            
               <form>
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/bloomberg-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success" onClick={this.articlebloombergSearch}>
-                    BLOOMBERG
-                  </button>
+                <a href="../../public/assets/images/bloomberg-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/bloomberg-logo.png" onClick={this.articlebloombergSearch}/>
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/businessinsider-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success"  onClick={this.articlebusinessinsiderSearch}>
-                    BUSINESS INSIDER
-              </button>
+                <a href="../../public/assets/images/businessinsider-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/businessinsider-logo.png" onClick={this.articlebusinessinsiderSearch} />
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/economist-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success" onClick={this.articleeconomistSearch}>
-                    ECONOMIST
-          </button>
+                <a href="../../public/assets/images/economist-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/economist-logo.png" onClick={this.articleeconomistSearch} />
+                </a>
                 </div>
 
                 <div className="form-group">
-                  <img style={{padding:10}} src="/assets/images/financialtimes-logo.png" bordered spaced rounded />
-                  <button type="submit" className="btn btn-block btn-success" onClick={this.articlefinancialtimesSearch}>
-                    FINANCIAL TIMES
-      </button>
+                <a href="../../public/assets/images/financialtimes-logo.png">
+                  <img id="rounded" style={{padding:10}} src="/assets/images/financialtimes-logo.png" onClick={this.articlefinancialtimesSearch}/>
+                </a>
                 </div>
               </form>
             </div>
-
-
+          
 
             {/* Article result container */}
-            <div className="col-8">
+            <div className="col-md-8 col-sm-12">
               <h2>{this.state.articles.length
-                ? "Article Results"
-                : "Search for some articles"}
+                ? "Top News"
+                : "Top News"}
               </h2>
 
               <ul className="list-group list-group-flush">
-                {this
-                  .state
-                  .articles
-                  .map(article => (
-                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
-                      <b> {article.title}</b>
-                      {article.description}
-                      <span
-                        className="badge badge-primary badge-pill"
-                        onClick={() => this.saveArticle(article._id)}>Save News</span>
-                    </li>
+               {this
+                .state
+                .articles
+                .map(article => (
+                  <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white' }}>
+                  <img src={article.urlToImage} style={{ height: '120px', width: '160px', padding: '10px', float: 'left', marginBottom: '40px'}} />
+                  <h3> {article.title} </h3>
+                  <div>
+                  <p>{article.description}</p>
+                  </div>
+                  <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
+                    Save News
+                </button>
+                </li>
                   ))}
               </ul>
             </div>
-
+          </div>
           </div>
         </div>
-
-      </div>
+      
     )
   }
 }

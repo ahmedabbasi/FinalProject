@@ -21,6 +21,24 @@ class Home extends Component {
     });
   }
 
+  componentDidMount() {
+    this.articlecnnSearchDef();
+  }
+
+
+
+  articlecnnSearchDef = event => {
+    API.cnnSearch({
+      q: this.state.q
+    }).then(res => {
+      console.log(res);
+      this.setState({
+        articles: res.data.articles,
+        q: ""
+      })
+    })
+      .catch(err => console.log(err))
+  }
 
 
   articlecnnSearch = event => {
@@ -94,95 +112,104 @@ class Home extends Component {
 
     return (
       <div>
-      <div className="homepage-hero-module">
-        <div className="video-container">
-          <div className="filter"></div>
-          <video autoPlay loop className="fillWidth">
-            <source src="./assets/videos/Ferris-wheel.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="/assets/videos/Ferris-wheel.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-          </video>
-          <div className="poster hidden">
-            <img src="./assets/videos/Ferris-wheel.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-      
-  
+
+
       <div className="jumbotron">
-        <div className="row align-items-center justify-content-center my-5">
-          {/* <h1>News Explorer with React!</h1>     */}
-          
-        </div>
+      {this
+        .state
+        .articles
+        .map(article => (
+          <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left"
+          id="mylist">
+          <div id = 'container'>
+            <img src={article.urlToImage} style={{maxHeight: '550px',minWidth:'1280px'}} />
+               <div className="centered"><h1> {article.title} </h1></div>
+               </div>
+          </li>
+        ))}
       </div>
-    
+
+      
+
+  
+
+
 
 
       <div className="container-fluid">
         <div className="row">
+      
 
           {/* Form for article search */}
-          <div className="col-4">
-            <h2>Search for News</h2>
-            <form>
-              <div className="form-group">
-                <img style={{ padding: 10 }} src="/assets/images/cnn-logo.png" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlecnnSearch}>
-                  CNN
-                  </button>
-              </div>
 
-              <div className="form-group">
-                <img style={{ padding: 10 }} src="/assets/images/fox-logo.png" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlefoxSearch}>
-                  FOX
-              </button>
-              </div>
+          <div className="form-group">
+            <div className="col-md-3 col-sm-12">
 
-              <div className="form-group">
-                <img style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlemsnbcSearch}>
-                  MSNBC
-          </button>
-              </div>
 
-              <div className="form-group">
-                <img style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" bordered spaced rounded />
-                <button type="submit" className="btn btn-block btn-success" onClick={this.articlenewsweekSearch}>
-                  NEWSWEEK
-      </button>
-              </div>
-            </form>
+              <h2>Choose Your News:</h2>
+              <form>
+                <div className="form-group" style={{ border: '10px' }}>
+                <a href="../../public/assets/images/cnn-logo.png" onClick={this.articlecnnSearch}>
+                <img id="rounded" src= {{ padding: 10 }} src="/assets/images/cnn-logo.png" onClick={this.articlecnnSearch} />
+                  </a>
+                </div>
+
+
+
+                <div className="form-group" style={{ border: '10px' }}>
+                <a href="../../public/assets/images/fox-logo.png" onClick={this.articlefoxSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/fox-logo.png" onClick={this.articlefoxSearch} />
+                </a>
+                </div>
+
+                <div className="form-group" style={{ border: '10px' }}>
+                <a href="../../public/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/msnbc-logo.jpg" onClick={this.articlemsnbcSearch} />
+                  </a>
+                </div>
+
+                <div className="form-group" style={{ border: '10px' }}>
+                <a href="../../public/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch}>
+                <img id="rounded" style={{ padding: 10 }} src="/assets/images/newsweek-logo.jpg" onClick={this.articlenewsweekSearch} />
+                  </a>
+                </div>
+              </form>
+            </div>
+
+
+            {/* Article result container */}
+            <div className="col-md-8 col-sm-12" >
+              <h2 id="highlight">{this.state.articles.length
+                ? "Top Stories"
+                : "Top Stories"}
+              </h2>
+
+              <ul className="list-group list-group-flush">
+                {this
+                  .state
+                  .articles
+                  .map(article => (
+                    <li key={article._id} className="list-group-item d-flex justify-content-between align-items-left" style={{ backgroundColor: 'black', color: 'white' }}>
+                      <img src={article.urlToImage} style={{ height: '120px', width: '160px', float: 'left'}} />
+                      <h3> {article.title} </h3>
+                      <div>
+                      <p>{article.description}</p>
+                      </div>
+                      <button type="submit" className="btn btn-block btn-success" onClick={() => this.saveArticle(article._id)}>
+                        Save News
+                    </button>
+                    </li>
+                  ))}
+                
+              </ul>
+            </div>
           </div>
-
-
-
-          {/* Article result container */}
-          <div className="col-8">
-            <h2>{this.state.articles.length
-              ? "Article Results"
-              : "Search for some articles"}
-            </h2>
-
-            <ul className="list-group list-group-flush">
-              {this
-                .state
-                .articles
-                .map(article => (
-                  <li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
-                    <b> {article.title}</b>
-                    {article.description}
-                    <span
-                      className="badge badge-primary badge-pill"
-                      onClick={() => this.saveArticle(article._id)}>Save News</span>
-                  </li>
-                ))}
-            </ul>
-          </div>
-
         </div>
       </div>
+
       </div>
-        )
+                )
+                
   }
 }
 

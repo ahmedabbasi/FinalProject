@@ -1,31 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { Button, Brand, Header, Toggle, Collapse, Nav, NavItem, NavDropdown, MenuItem, Navbar } from 'react-bootstrap';
 
 
+const MyNavbar = () => (
+  <Navbar inverse collapseOnSelect>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="/">RNN</a>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav>
+        <NavItem eventKey={1} href="/">
+          Home
+  </NavItem>
+        <NavItem eventKey={2} href="/sports">
+          Sports
+      </NavItem>
+        <NavItem eventKey={3} href="/business">
+          Business
+      </NavItem>
+      <NavItem eventKey={3} href="/entertainment">
+      Entertainment
+  </NavItem>
+      </Nav>
+      <Nav pullRight>
+        <NavItem eventKey={1} href="/saved">
+          Saved News
+      </NavItem>
+        <NavItem eventKey={2} href="#">
+          Link Right
+      </NavItem>
 
-const Navbar = () => (
- 
 
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <NavLink className="navbar-brand" to="/">News Bug</NavLink>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
 
-  <div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="navbar-nav">
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/">Home </NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/saved">Saved</NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/sports">Sports</NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/business">Business</NavLink>
-      </li>
-    </ul>
-  </div>
-</nav>
 
 
 
@@ -33,6 +46,6 @@ const Navbar = () => (
 
 
 
-export default Navbar;
+export default MyNavbar;
 
 
