@@ -37,7 +37,6 @@ const MyNavbar = () => (
 
     </Nav>
   </Navbar.Collapse>
-  
 </Navbar>
 
 

@@ -49,7 +49,8 @@ class Saved extends Component {
                       <a href={article.url} target="_blank">{article.title}</a>
                       <span
                         className="badge badge-primary badge-pill"
-                        onClick={() => this.deleteArticle(article._id)}>Delete Article</span>
+                       onClick={() => this.deleteArticle(article._id)}>Delete Article </span>
+                    
                     </li>
                   ))}
               </ul>
